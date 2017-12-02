@@ -2,4 +2,6 @@ def app(environ, start_response):
 	start_response("200 OK", [
 		("Content-Type", "text/plain")
 		]
-	return "\n".join(environ.get('QUERY_STRING').split("&"))
+	resp = environ['QUERY_STRING'].split('&")
+	resp = [item + '\r\n' for item in resp]
+	return resp
