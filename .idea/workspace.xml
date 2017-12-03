@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="046adff1-0ff1-4d2e-87e7-c825f73cbaeb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello.py" afterPath="$PROJECT_DIR$/hello.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/etc/gunicorn-django.conf" afterPath="$PROJECT_DIR$/etc/gunicorn-django.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/etc/gunicorn.conf" afterPath="$PROJECT_DIR$/etc/gunicorn.conf" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,6 +51,26 @@
       <file leaf-file-name="gunicorn-django.conf" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/etc/gunicorn-django.conf">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="init.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/init.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nginx.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/etc/nginx.conf">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
@@ -60,8 +81,8 @@
       <file leaf-file-name="gunicorn.conf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/etc/gunicorn.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -108,6 +129,8 @@
         <option value="$PROJECT_DIR$/ask/ask/urls.py" />
         <option value="$PROJECT_DIR$/ask/qa/urls.py" />
         <option value="$PROJECT_DIR$/hello.py" />
+        <option value="$PROJECT_DIR$/etc/gunicorn.conf" />
+        <option value="$PROJECT_DIR$/etc/gunicorn-django.conf" />
       </list>
     </option>
   </component>
@@ -167,6 +190,11 @@
               <item name="web" type="b2602c69:ProjectViewProjectNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="etc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -285,7 +313,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/etc/gunicorn.conf">
+    <entry file="file://$PROJECT_DIR$/etc/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -293,10 +321,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/etc/gunicorn-django.conf">
+    <entry file="file://$PROJECT_DIR$/init.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etc/gunicorn.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etc/gunicorn-django.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
           <folding />
         </state>
       </provider>
