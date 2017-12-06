@@ -14,6 +14,7 @@ class QuestionManager(models.Model):
 
 
 class Question(models.Model):
+    objects = QuestionManager()
     title = models.CharField(max_length=255)
     text = models.TextField()
     added_at = models.DateTimeField(blank=True, auto_now=True)
@@ -30,10 +31,10 @@ class Question(models.Model):
     def get_absolute_url(self):
         return '/question/%d/' % self.pk
 
-    objects = QuestionManager()
+    # objects = QuestionManager()
 
-    # class Meta:
-    #     ordering = ['-id']
+    class Meta:
+        ordering = ['-id']
 
 
 class Answer(models.Model):
