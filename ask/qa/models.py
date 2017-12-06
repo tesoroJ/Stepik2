@@ -5,12 +5,12 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-# class QuestionManager(models.Model):
-#     def new(self):
-#         return self.order_by('-added_at')
-#
-#     def popular(self):
-#         return self.order_by('-rating')
+class QuestionManager(models.Model):
+    def new(self):
+        return self.order_by('-added_at')
+
+    def popular(self):
+        return self.order_by('-rating')
 
 
 class Question(models.Model):
@@ -30,7 +30,7 @@ class Question(models.Model):
     def get_absolute_url(self):
         return '/question/%d/' % self.pk
 
-    #objects = QuestionManager()
+    objects = QuestionManager()
 
     # class Meta:
     #     ordering = ['-id']
