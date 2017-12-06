@@ -88,10 +88,10 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ask/qa/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="33" />
+            <state relative-caret-position="375">
+              <caret line="69" column="16" lean-forward="true" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
               <folding>
-                <element signature="e#65#93#0" expanded="true" />
+                <element signature="e#1253#1292#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -362,7 +362,7 @@
         <state relative-caret-position="255">
           <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
           <folding>
-            <element signature="e#65#93#0" expanded="true" />
+            <element signature="e#1253#1292#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -428,7 +428,7 @@
         <state relative-caret-position="315">
           <caret line="22" column="65" lean-forward="false" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
           <folding>
-            <element signature="e#65#93#0" expanded="true" />
+            <element signature="e#1253#1292#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -510,7 +510,7 @@
         <state relative-caret-position="135">
           <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding>
-            <element signature="e#65#93#0" expanded="true" />
+            <element signature="e#1253#1292#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -623,10 +623,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ask/qa/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="33" />
+        <state relative-caret-position="375">
+          <caret line="69" column="16" lean-forward="true" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
           <folding>
-            <element signature="e#65#93#0" expanded="true" />
+            <element signature="e#1253#1292#0" expanded="true" />
           </folding>
         </state>
       </provider>
