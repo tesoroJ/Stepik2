@@ -43,8 +43,8 @@
 #     question = models.ForeignKey(Question)
 #     author = models.ForeignKey(User)
 
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+
+#from __future__ import unicode_literals
 
 from django.db import models
 
@@ -71,7 +71,10 @@ class Question(models.Model):
     author = models.ForeignKey(User)
     likes = models.ManyToManyField(User, related_name='question_like_user')
 
-    def __unicode__(self):
+    # def __unicode__(self):
+    #     return self.title
+
+    def __str__(self):
         return self.title
 
     def get_absolute_url(self):
