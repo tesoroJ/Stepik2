@@ -59,7 +59,8 @@ class QuestionManager(models.Manager):
         return self.order_by('-added_at')
 
     def popular(self):
-        return self.order_by('-rating')
+        r#eturn self.order_by('-rating')
+        return self.order_by('-id')
 
 
 class Question(models.Model):
