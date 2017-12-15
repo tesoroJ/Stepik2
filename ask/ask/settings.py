@@ -74,15 +74,16 @@ WSGI_APPLICATION = 'ask.wsgi.application'
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     'NAME': os.path
+    # .join(BASE_DIR, 'db.sqlite3'),
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mybase',
-        'USER': 'admin',
-        #'USER': 'root',
-        'PASSWORD': 'pass111',
-        #'PASSWORD': 'qwerty',
+        'USER': 'admin', # Stepik base
+        #'USER': 'root', #local base
+        'PASSWORD': 'pass111', # Stepik Base
+        #'PASSWORD': 'qwerty', # local base
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }

@@ -92,3 +92,6 @@ class Answer(models.Model):
     added_at = models.DateTimeField(blank=True, auto_now=True)
     question = models.ForeignKey(Question)
     author = models.ForeignKey(User)
+
+    def __str__(self):
+        return self.text

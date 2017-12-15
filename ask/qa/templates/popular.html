@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+
+{% extends "base.html" %}
+
+{% block content %}
+  {% block question_view_title %}<h1>New Questions</h1>{% endblock %}
+  {% for question in questions %}
+    {% block question_title %}
+      <h2><a href="{{ question.get_absolute_url }}">{{ question.title }}</a></h2>
+    {% endblock %}
+  {% endfor %}
+
+  {% include "pagination.html" %}
+{% endblock %}
