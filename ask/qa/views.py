@@ -38,6 +38,7 @@ def index(request):
     limit = request.GET.get('limit', 10)
     page = request.GET.get('page', 1)
     paginator = Paginator(t, limit)
+    paginator.baseurl = '/?page='
     page = paginator.page(page)
     # page, paginator = paginate(request, t)
     return render(request, 'index.html', {
@@ -74,9 +75,9 @@ def popular(request):
 
 
 def question(request, pk):
-    # t = get_object_or_404(Question, id=pk)
+    t = get_object_or_404(Question, id=pk)
     #id = request.GET.get(pk)
-    t = Question.objects.get(id=pk)
+    # t = Question.objects.get(id=pk)
     try:
         a = Answer.objects.filter(question_id=pk)
     except Answer.DoesNotExist:
