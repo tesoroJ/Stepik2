@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage
 from qa.models import Question, Answer
+# from qa.forms import AskForm
+from .forms import AskForm, AnswerForm
 
 
 # Create your views here.
@@ -47,6 +49,7 @@ def index(request):
         'paginator': paginator,
     })
 
+
 # def post_list_all(request):
 #     posts = Post.objects.filter(is_published=True)
 #     limit = request.GET.get('limit', 10)
@@ -76,7 +79,7 @@ def popular(request):
 
 def question(request, pk):
     t = get_object_or_404(Question, id=pk)
-    #id = request.GET.get(pk)
+    # id = request.GET.get(pk)
     # t = Question.objects.get(id=pk)
     try:
         a = Answer.objects.filter(question_id=pk)
@@ -86,4 +89,33 @@ def question(request, pk):
         'title': t.title,
         'text': t.text,
         'answer': a,
+    })
+
+
+def question_ask(request):
+    if request.method == "POST":
+        form = AskForm(request.POST)
+        if form.is_valid():
+            form._user = request.user
+            post = form.save()
+            url = post.get_absolute_url()
+            return HttpResponseRedirect(url)
+    else:
+        form = AskForm()
+    return render(request, 'ask.html', {
+        'form': form,
+    })
+
+
+def question_ans(request):
+    if request.method == 'POST':
+        form = AnswerForm(request.POST)
+        if form.is_valid():
+            form._user = request.user
+            answer = form.save()
+            url = answer.get_url()
+            return HttpResponseRedirect(url)
+    #return HttpResponseRedirect('/')
+    return render(request, 'question.html', {
+        'form': form,
     })

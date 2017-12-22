@@ -78,6 +78,8 @@ class Question(models.Model):
     def __str__(self):
         return self.title
 
+    # def get_url(self):
+    #     return "/question/{}/".format(self.pk)
     def get_absolute_url(self):
         return '/question/%d/' % self.pk
 
