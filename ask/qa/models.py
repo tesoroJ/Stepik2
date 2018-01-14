@@ -95,5 +95,25 @@ class Answer(models.Model):
     question = models.ForeignKey(Question)
     author = models.ForeignKey(User)
 
+    def get_url(self):
+        return '/question/%d/' % self.question.id
+
+    # def get_url(self):
+    #     return reverse('question', kwargs={'question_id': self.question.id})
+
     def __str__(self):
         return self.text
+
+
+# class Answer(models.Model):
+#     text = models.TextField()
+#     added_at = models.DateTimeField(blank=True, auto_now_add=True)
+#     question = models.ForeignKey(Question, on_delete=models.CASCADE)
+#     author = models.ForeignKey(User, on_delete=models.CASCADE)
+#
+#     def get_url(self):
+#         return reverse('question', kwargs={'question_id': self.question.id})
+#
+#     def __unicode__(self):
+#         return "Answer by {0} to question {1}: {2}...". \
+#             format(self.author.username, self.question.id, self.text[:50])

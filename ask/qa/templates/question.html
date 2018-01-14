@@ -19,7 +19,7 @@
       <form method="post" action="/answer/">
         {% csrf_token %}
 
-          {{ form.as_p}}
+          {{ form }}
         <button type="submit">Add answer</button>
       </form>
     </div>

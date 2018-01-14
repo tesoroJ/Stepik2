@@ -81,6 +81,7 @@ def question(request, pk):
     t = get_object_or_404(Question, id=pk)
     # id = request.GET.get(pk)
     # t = Question.objects.get(id=pk)
+    form = AnswerForm(initial={'question': pk})
     try:
         a = Answer.objects.filter(question_id=pk)
     except Answer.DoesNotExist:
@@ -89,6 +90,7 @@ def question(request, pk):
         'title': t.title,
         'text': t.text,
         'answer': a,
+        'form': form,
     })
 
 
@@ -107,15 +109,26 @@ def question_ask(request):
     })
 
 
+# def question_ans(request):
+#     if request.method == 'POST':
+#         form = AnswerForm(request.POST)
+#         if form.is_valid():
+#             form._user = request.user
+#             answer = form.save()
+#             url = answer.get_url()
+#             return HttpResponseRedirect(url)
+#     #return HttpResponseRedirect('/')
+#     return render(request, 'question.html', {
+#         'form': form,
+#     })
+
 def question_ans(request):
     if request.method == 'POST':
         form = AnswerForm(request.POST)
         if form.is_valid():
+            print('Answer is valid')
             form._user = request.user
             answer = form.save()
             url = answer.get_url()
             return HttpResponseRedirect(url)
-    #return HttpResponseRedirect('/')
-    return render(request, 'question.html', {
-        'form': form,
-    })
+    return HttpResponseRedirect('/')
