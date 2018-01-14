@@ -80,10 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mybase',
-        #'USER': 'admin', # Stepik base
-        'USER': 'root', #local base
-        #'PASSWORD': 'pass111', # Stepik Base
-        'PASSWORD': 'qwerty', # local base
+        'USER': 'admin', # Stepik base
+        #'USER': 'root', #local base
+        'PASSWORD': 'pass111', # Stepik Base
+        #'PASSWORD': 'qwerty', # local base
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }

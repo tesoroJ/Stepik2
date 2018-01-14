@@ -5,12 +5,39 @@ from .models import Question, Answer
 from django.contrib.auth.models import User
 
 
+# class AskForm(forms.Form):
+#     title = forms.CharField(max_length=100)
+#     text = forms.CharField(widget=forms.Textarea)
+#
+#     def clean_text(self):
+#         text = self.cleaned_data['text']
+#         return text
+#
+#     def save(self):
+#         if self._user.is_anonymous():
+#             self.cleaned_data['author_id'] = 1
+#         else:
+#             self.cleaned_data['author'] = self._user
+#         ask = Question(**self.cleaned_data)
+#         ask.save()
+#         return ask
+
 class AskForm(forms.Form):
-    title = forms.CharField(max_length=100)
+    title = forms.CharField(max_length=255)
     text = forms.CharField(widget=forms.Textarea)
+
+    def clean_title(self):
+        title = self.cleaned_data['title']
+        if title.strip() == '':
+            raise forms.ValidationError('Title is empty',
+                                        code='validation_error')
+        return title
 
     def clean_text(self):
         text = self.cleaned_data['text']
+        if text.strip() == '':
+            raise forms.ValidationError('Text is empty',
+                                        code='validation_error')
         return text
 
     def save(self):
@@ -18,9 +45,11 @@ class AskForm(forms.Form):
             self.cleaned_data['author_id'] = 1
         else:
             self.cleaned_data['author'] = self._user
-        ask = Question(**self.cleaned_data)
-        ask.save()
-        return ask
+        question = Question(**self.cleaned_data)
+        question.save()
+        return question
+
+
 
 
 # class AnswerForm(forms.Form):
