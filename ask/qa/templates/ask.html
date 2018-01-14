@@ -5,7 +5,7 @@
 <form method="post" action="/ask/">
     <fieldset>
     {% csrf_token %}
-{{ form.as_p }}
+    {{ form.as_p }}
     </fieldset>
     <button type="submit">Ask question</button>
 </form>
