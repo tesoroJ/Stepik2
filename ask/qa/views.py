@@ -132,3 +132,4 @@ def question_ans(request):
             url = answer.get_url()
             return HttpResponseRedirect(url)
     return HttpResponseRedirect('/')
+
