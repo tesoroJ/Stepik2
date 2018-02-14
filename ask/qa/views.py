@@ -3,7 +3,9 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage
 from qa.models import Question, Answer
 # from qa.forms import AskForm
-from .forms import AskForm, AnswerForm
+from .forms import AskForm, AnswerForm, SignupForm, LoginForm
+from django.contrib.auth import authenticate, login, logout
+from django.core.urlresolvers import reverse
 
 
 # Create your views here.
@@ -48,19 +50,6 @@ def index(request):
         'page': page,
         'paginator': paginator,
     })
-
-
-# def post_list_all(request):
-#     posts = Post.objects.filter(is_published=True)
-#     limit = request.GET.get('limit', 10)
-#     page = request.GET.get('page', 1)
-#     paginator = Paginator(posts, limit)
-#     paginator.baseurl = '/blog/all_posts/?page='
-#     page = paginator.page(page) # Page
-#     return render(request, 'blog/post_by_tag.html', {
-#         'posts':  page.object_list,
-#         'paginator': paginator, 'page': page,
-# })
 
 
 def popular(request):
@@ -109,19 +98,6 @@ def question_ask(request):
     })
 
 
-# def question_ans(request):
-#     if request.method == 'POST':
-#         form = AnswerForm(request.POST)
-#         if form.is_valid():
-#             form._user = request.user
-#             answer = form.save()
-#             url = answer.get_url()
-#             return HttpResponseRedirect(url)
-#     #return HttpResponseRedirect('/')
-#     return render(request, 'question.html', {
-#         'form': form,
-#     })
-
 def question_ans(request):
     if request.method == 'POST':
         form = AnswerForm(request.POST)
@@ -133,3 +109,26 @@ def question_ans(request):
             return HttpResponseRedirect(url)
     return HttpResponseRedirect('/')
 
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect(reverse('index'))
+    form = SignupForm()
+    return render(request, 'signup.html', {'form': form})
+
+
+def user_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect(reverse('index'))
+    form = LoginForm()
+    return render(request, 'login.html', {'form': form})
